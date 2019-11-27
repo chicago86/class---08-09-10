@@ -70,6 +70,7 @@ li {
   color: white;
 }
 .ba-menu a:hover {
+  border-bottom: 2px solid currentColor;
   color: #e71cb4;
 }
 .ba-intro-iner {
@@ -109,13 +110,17 @@ li {
 }
 .ba-button-hollow {
   font-size: 16px;
-  color: white;
+  color: #ffffff;
   border: 2px solid #dddddd;
   border-radius: 10px;
   font-weight: 700;
   padding: 10px 23px;
   letter-spacing: 0.02em;
   margin-top: 40px;
+}
+.ba-button-hollow:hover{
+  background-color: #dddddd;
+  color: #444;
 }
 .ba-section {
   padding: 140px 0 155px;
@@ -258,7 +263,8 @@ li {
 .ba-countdown__item:hover {
   border: 2px solid #ffffff;
   background-color: #000000;
-  background: none;
+  background-color: transparent;
+  cursor: pointer;
 }
 .ba-countdown__item {
   width: 160px;
@@ -276,6 +282,25 @@ li {
   line-height: 1;
   font-weight: 700;
 }
-.ba-colored{
+.ba-colored {
   color: #e71cb4;
+}
+.ba-jury{
+  background-color: #ffe9eb;
+}
+.ba-person-jury{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.ba-jury__img{
+  margin-bottom: 25px;
+}
+.ba-jury__title{
+  margin-bottom: 10px;
+}
+.ba-person-jury p{
+font-size: 16px;
 }
