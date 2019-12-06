@@ -118,7 +118,7 @@ li {
   letter-spacing: 0.02em;
   margin-top: 40px;
 }
-.ba-button-hollow:hover{
+.ba-button-hollow:hover {
   background-color: #dddddd;
   color: #444;
 }
@@ -285,22 +285,91 @@ li {
 .ba-colored {
   color: #e71cb4;
 }
-.ba-jury{
+.ba-jury {
   background-color: #ffe9eb;
 }
-.ba-person-jury{
+.ba-person-jury {
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
 }
 
-.ba-jury__img{
+.ba-jury__img {
   margin-bottom: 25px;
 }
-.ba-jury__title{
+.ba-jury__title {
   margin-bottom: 10px;
 }
-.ba-person-jury p{
-font-size: 16px;
+.ba-person-jury p {
+  font-size: 16px;
+}
+.ba-section__content--medium {
+  max-width: 750px;
+  margin-left: auto;
+  margin-right: auto;
+  /* margin: 0 auto; */
+}
+.ba-contact-form {
+  max-width: 636px;
+  margin-left: auto;
+  margin-right: auto;
+}
+input[type="url"],
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="number"],
+input[type="tel"],
+textarea,
+select {
+  transition: color 0.3s ease-in, border-color 0.3s ease-in,
+    background-color 0.3s ease-in, opacity 0.3s ease-in, box-shadow 0.3s;
+  display: block;
+  width: 100%;
+  border: none;
+  border-bottom: 2px solid #555;
+  font-size: 13px;
+  color: #555555;
+  padding: 14px 0;
+  background: none;
+  margin-bottom: 25px;
+  box-shadow: 0 4px 0 0 #ccc;
+}
+input:placeholder,
+textarea:placeholder {
+  color: #ccc;
+}
+input[type="url"]:focus,
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="password"]:focus,
+input[type="number"]:focus,
+input[type="tel"]:focus,
+textarea:focus,
+select:focus {
+  outline: none;
+  box-shadow: 0 0 0 0 #ccc;
+}
+textarea {
+  resize: none;
+}
+.ba-float-label{
+  position: relative;
+}
+.ba-float-label__placeholder{
+  position: absolute;
+  left: 0;
+  bottom: 15px;
+  font-size: 13px;
+  color: #ccc;
+  transition: transform 0.3s;
+  pointer-events: none;
+}
+.ba-float-label__input:focus ~ label{
+  transform: translateY(40px);
+}
+.ba-float-label__input:not(:placeholder-shown) ~ label, .ba-float-label__input:focus ~ label
+{
+  transform: translateY(36px);
 }
