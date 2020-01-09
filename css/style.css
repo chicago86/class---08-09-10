@@ -48,6 +48,7 @@ a:hover {
   background: #444444 url(../img/intro-bg.jpg) no-repeat 50%;
   background-size: cover;
   color: white;
+  background-attachment: fixed;
 }
 .ba-header-bar {
   display: flex;
@@ -60,6 +61,7 @@ a:hover {
   margin: 0;
   padding: 0;
 }
+
 li {
   padding-left: 37px;
   line-height: 1;
@@ -105,6 +107,7 @@ li {
   margin-bottom: 20px;
   font-weight: 700;
 }
+
 .ba-intro-iner p {
   font-size: 30px;
 }
@@ -126,8 +129,8 @@ li {
   padding: 140px 0 155px;
 }
 .ba-colored-list {
-  display: flex;
-  flex-wrap: wrap;
+  /* display: flex;
+  flex-wrap: wrap; */
   padding: 0;
   list-style: none;
   margin-left: -30px;
@@ -135,6 +138,15 @@ li {
   /* column-count: 2;
   column-gap: 30px; */
   margin: 86px 0 10px;
+}
+@media screen and (min-width: 1024px) {
+  .ba-colored-list {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .ba-colored-list li {
+    width: 50%;
+  }
 }
 .ba-colored-list li:nth-child(2) {
   order: 3;
@@ -152,12 +164,13 @@ li {
   order: 6;
 }
 .ba-colored-list li {
-  width: 50%;
+  /* width: 50%; */
   padding-left: 10px;
   display: flex;
   align-items: flex-start;
   counter-increment: number;
 }
+
 .ba-colored-list span {
   line-height: 1.8;
 }
@@ -172,6 +185,13 @@ li {
 .ba-person img {
   border-radius: 10px;
   margin-bottom: 8px;
+  
+}
+.ba-person-jury img:hover {
+  transform: rotateY(360deg);
+  transition: 3s;
+  cursor: pointer;
+
 }
 .ba-person > :last-child {
   margin-bottom: 0;
@@ -186,14 +206,17 @@ li {
   width: 68px;
   flex-shrink: 0;
 }
-.ba-colored-list li::after {
-  content: "";
-  width: 68px;
-  height: 40px;
-  background: url(../img/icons.png) no-repeat 24px 10px;
-  order: 0;
-  flex-shrink: 0;
-  margin-right: 30px;
+
+@media screen and (min-width: 768px) {
+  .ba-colored-list li::after {
+    content: "";
+    width: 68px;
+    height: 40px;
+    background: url(../img/icons.png) no-repeat 24px 10px;
+    order: 0;
+    flex-shrink: 0;
+    margin-right: 30px;
+  }
 }
 .ba-colored-list li span {
   padding-left: 30px;
@@ -354,10 +377,10 @@ select:focus {
 textarea {
   resize: none;
 }
-.ba-float-label{
+.ba-float-label {
   position: relative;
 }
-.ba-float-label__placeholder{
+.ba-float-label__placeholder {
   position: absolute;
   left: 0;
   bottom: 15px;
@@ -366,10 +389,105 @@ textarea {
   transition: transform 0.3s;
   pointer-events: none;
 }
-.ba-float-label__input:focus ~ label{
+.ba-float-label__input:focus ~ label {
   transform: translateY(40px);
 }
-.ba-float-label__input:not(:placeholder-shown) ~ label, .ba-float-label__input:focus ~ label
-{
+.ba-float-label__input:not(:placeholder-shown) ~ label,
+.ba-float-label__input:focus ~ label {
   transform: translateY(36px);
 }
+.ba-footer {
+  padding: 70px 60px;
+  background: #eeee;
+}
+.ba-socials {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.ba-socials a {
+  width: 65px;
+  height: 64px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  background-color: #dedede;
+  color: white;
+}
+.ba-socials a + a {
+  margin-left: 10px;
+}
+.ba-socials a:hover {
+  background: #fff;
+  color: #dedede;
+}
+.ba-socials svg path {
+  fill: currentColor;
+}
+.ba-socials svg {
+  width: 18px;
+  height: 18px;
+  fill: currentColor;
+}
+.ba-hidden {
+  display: none;
+}
+@media screen and (max-width: 767px){
+  .ba-section-title{
+    font-size: 36px;
+    margin-bottom: 30px;
+  }
+  .ba-section{
+    padding: 50px 0;
+  }
+}
+@media screen and (max-width: 767px){
+  .ba-logo{
+    position: relative;
+    z-index: 2;
+  }
+  .ba-menu{
+    z-index: 1;
+    display: block;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+    max-width: 250px;
+    background: black;
+    opacity: 0.7;
+    padding: 80px 30px 30px 0;
+    transition: transform 0.3s;
+    transform: translateX(-100%) 
+  }
+  .ba-menu li{
+    padding: 0 0 20px 15px;
+  }
+}
+.ba-menu.open{
+transform: translateX(0);
+}
+@media screen and (min-width: 768px){
+  .ba-menu-toggle{
+    display: none;
+  }
+}
+.ba-menu-toggle{
+  padding: 0;
+  background: none;
+  border: none;
+  line-height: 1;
+  height: auto;
+  color: white;
+}
+.ba-menu-toggle svg{
+fill: currentColor;
+}
+.ba-menu-toggle{
+transform-origin: 0 100%;
+}
+.ba-menu-toggle svg:hover{
+  transform: rotate(-40deg);
+  transition: 0.7s;
+  }
